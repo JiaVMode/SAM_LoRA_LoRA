@@ -384,7 +384,7 @@ def main():
     
     # 路径参数
     parser.add_argument('--dataset_path', type=str, 
-                        default='/map-vepfs/haozhe/lj/report/sam2/data/png_output',
+                        default='./data/png_output',
                         help='数据集路径')
     parser.add_argument('--output_dir', type=str, default='./output',
                         help='输出目录')

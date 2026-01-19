@@ -344,7 +344,7 @@ def get_thymoma_dataset_3d(args, sam_trans=None):
 if __name__ == "__main__":
     # 测试数据集
     args = {
-        'dataset_path': '/map-vepfs/haozhe/lj/report/sam2/data/png_output',
+        'dataset_path': './data/png_output',
         'Idim': 1024,
     }
     

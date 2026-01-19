@@ -1,7 +1,7 @@
 # AutoSAM 2D Training Configuration
 
 # 数据路径
-dataset_path: "/map-vepfs/haozhe/lj/report/sam2/data/png_output"
+dataset_path: "./data/png_output"
 output_dir: "./output"
 
 # SAM 配置

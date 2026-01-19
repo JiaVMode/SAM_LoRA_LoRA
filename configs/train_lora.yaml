@@ -2,7 +2,7 @@
 # 使用 LoRA 微调，显著减少参数量和显存占用
 
 # 数据路径
-dataset_path: "/map-vepfs/haozhe/lj/report/sam2/data/png_output"
+dataset_path: "./data/png_output"
 output_dir: "./output_lora"
 
 # SAM 配置
