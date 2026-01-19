@@ -1,0 +1,32 @@
+# AutoSAM 2D Training Configuration - LoRA Mode
+# 使用 LoRA 微调，显著减少参数量和显存占用
+
+# 数据路径
+dataset_path: "/map-vepfs/haozhe/lj/report/sam2/data/png_output"
+output_dir: "./output_lora"
+
+# SAM 配置
+sam_checkpoint: "./checkpoints/sam_vit_b.pth"
+model_type: "vit_b"
+use_amp: true
+
+# 模型配置
+Idim: 256
+order: 85
+depth_wise: false
+pretrained: true
+
+# 训练超参数
+epochs: 50
+batch_size: 16
+learning_rate: 1.0e-3  # LoRA 可以用更高的学习率
+weight_decay: 1.0e-4
+num_workers: 4
+
+# LoRA 配置
+use_lora: true         # 启用 LoRA 微调
+lora_rank: 8           # LoRA 秩 (8/16/32)
+lora_alpha: 16.0       # LoRA 缩放因子
+
+# Early Stopping
+patience: 5

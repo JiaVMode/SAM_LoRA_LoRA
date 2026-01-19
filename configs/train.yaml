@@ -1,0 +1,31 @@
+# AutoSAM 2D Training Configuration
+
+# 数据路径
+dataset_path: "/map-vepfs/haozhe/lj/report/sam2/data/png_output"
+output_dir: "./output"
+
+# SAM 配置
+sam_checkpoint: "./checkpoints/sam_vit_b.pth"
+model_type: "vit_b"  # vit_b (快速) | vit_l | vit_h (慢)
+use_amp: true        # 混合精度训练 (加速)
+
+# 模型配置
+Idim: 256          # ModelEmb 输入尺寸
+order: 85          # HarDNet order
+depth_wise: false  # 使用 depth-wise 卷积
+pretrained: true   # HarDNet 使用预训练权重 (需要网络下载)
+
+# 训练超参数
+epochs: 50
+batch_size: 16
+learning_rate: 5.0e-4
+weight_decay: 1.0e-4
+num_workers: 4
+
+# 3D 配置 (可选)
+NumSliceDim: 32
+
+# LoRA 配置 (可选)
+use_lora: false      # 启用 LoRA 微调
+lora_rank: 8         # LoRA 秩 (越大效果越好但参数越多)
+lora_alpha: 16.0     # LoRA 缩放因子
