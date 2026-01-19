@@ -47,14 +47,31 @@ pip install -r requirements.txt
 
 ### 2. Data Preparation / 数据准备
 
-训练脚本默认接受 PNG 格式的切片数据。请按下述结构组织您的数据，或修改配置文件中的路径。
+训练脚本默认接受 PNG 格式的切片数据。提供了 `nii2png.py` 脚本用于将 NIfTI (`.nii.gz`) 格式的 3D 图像转换为 PNG 切片。
+
+**使用方法:**
+
+```bash
+# 转换单个文件或整个目录
+python nii2png.py /path/to/input_data /path/to/output_data
+```
+
+**数据结构示例:**
+
+建议将数据组织如下：
 
 ```
 data/
-  ├── png_output/
-      ├── case_001/
-          ├── image/ (CT slices .png)
-          ├── mask/  (Ground truth .png)
+  ├── raw/               # 原始 NIfTI 文件
+      ├── case_001_img.nii.gz
+      ├── case_001_mask.nii.gz
+  ├── png_output/        # 转换后的 PNG (由 nii2png.py 生成)
+      ├── case_001_img/
+          ├── slice_0000.png
+          ├── ...
+      ├── case_001_mask/
+          ├── slice_0000.png
+          ├── ...
 ```
 
 ### 3. Model Preparation / 模型准备
